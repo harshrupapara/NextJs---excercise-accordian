@@ -18,7 +18,9 @@ export default function App({ Component, pageProps }: AppProps) {
         html {
           font-family: ${rubik.style.fontFamily};
         }
-        p {
+        p,
+        h2,
+        input {
           font-family: ${inter.style.fontFamily};
         }
       `}</style>

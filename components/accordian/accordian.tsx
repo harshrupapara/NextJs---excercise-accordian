@@ -6,33 +6,21 @@ interface AccordionProps {
 }
 
 const Accordion: React.FC<AccordionProps> = ({ data }) => {
-  const [searchIndex, setSearchIndex] = useState<string | null>(null);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const handleAccordionClick = (index: number) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
   };
 
-  const handleSearchFunc = (value: string | null) => {
-    setSearchIndex(value);
-  };
   useEffect(() => {
     console.log("active Index: ", activeIndex);
   }, [activeIndex]);
 
   return (
     <>
-      {/* Search Functinality */}
-      <div className='container'>
-        <div className='flex justify-center'>
-          <div>
-            <input className='w-' placeholder='Search' />
-          </div>
-        </div>
-      </div>
       {data.map((item, index) => (
         <div key={index} className={`bg-gray-100 rounded-lg p-4 ${activeIndex === index ? "border-blue-500" : "border-transparent"}`}>
-          <button className='flex items-start justify-between w-full focus:outline-none' onClick={() => handleAccordionClick(index)}>
+          <button className='flex items-start gap-5 justify-between w-full focus:outline-none' onClick={() => handleAccordionClick(index)}>
             <h3
               className={`text-2xl text-start transition duration-100 font-semibold tracking-wide ${
                 activeIndex === index ? "text-blue-400" : ""
