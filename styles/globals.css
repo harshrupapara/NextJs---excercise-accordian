@@ -16,12 +16,10 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+h2 {
+  font-family: var(--font-inter);
+}
+
+h1 {
+  font-family: var(--font-rubik-mono-one);
 }
